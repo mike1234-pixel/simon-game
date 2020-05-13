@@ -206,9 +206,15 @@ body {
   .how-to__header {
     color: #313639;
     font-size: 4rem; }
+    @media (max-width: 450px) {
+      .how-to__header {
+        font-size: 3rem;
+        margin-right: 3.5rem; } }
   .how-to__text {
     color: #313639;
     font-size: 2rem; }
     @media (max-width: 450px) {
       .how-to__text {
-        font-size: 1.7rem; } }
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        margin-left: 1rem; } }

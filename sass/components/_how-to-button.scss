@@ -149,13 +149,19 @@ $red-light: #b6a63e;
   &__header {
     color: #313639;
     font-size: 4rem;
+    @media (max-width: 450px) {
+      font-size: 3rem;
+      margin-right: 3.5rem;
+    }
   }
 
   &__text {
     color: #313639;
     font-size: 2rem;
     @media (max-width: 450px) {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
     }
   }
 }
