@@ -1,0 +1,56 @@
+@mixin button-styles {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 1rem 1rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.5s;
+    position: relative;
+
+    font-size: 2rem;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active {
+    outline: none;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    &::after {
+      transform: scaleX(2) scaleY(1.5);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:focus {
+    outline: 0 !important;
+  }
+}
+
+#start-button {
+  @include button-styles();
+  background-color: $yellow;
+  font-family: "Press Start 2P";
+}

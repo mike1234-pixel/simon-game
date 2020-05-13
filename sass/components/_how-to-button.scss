@@ -1,0 +1,161 @@
+$red: #f0db4f;
+$red-light: #b6a63e;
+
+.how-to {
+  font-family: Jost;
+
+  &__checkbox {
+    display: none;
+    cursor: default;
+  }
+
+  &__button {
+    background-color: #fff;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    cursor: pointer;
+    text-align: center;
+
+    @media (max-width: 900px) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @media (max-width: 600px) {
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($red, $red-light);
+
+    z-index: 1000;
+    box-shadow: 0 1rem 3rem rgba(black, 0.1);
+    transition: transform 0.8s;
+
+    // transform: scale(80);
+    @media (max-width: 900px) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @media (max-width: 600px) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+  }
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    // set opacity and width to 0 on __nav to hide the navigation menu
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    // background-image: linear-gradient(to top right, $red, $red-light);
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($red, 0.8),
+      rgba($red-light, 0.8)
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  // functionality
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  // icon
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $red;
+      display: inline-block;
+    }
+    &::before,
+    &::after {
+      content: ""; // to make these pseudo-elements appear they need the content property set
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+  // the icon is a child of the button so we can select it like this
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  // button is an adjacent sibling of checkbox so we use +, then we select the icon
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  // text
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10rem 0;
+    text-align: center;
+
+    @media (max-width: 600px) {
+      margin: 0;
+    }
+  }
+
+  &__header {
+    color: #313639;
+    font-size: 4rem;
+  }
+
+  &__text {
+    color: #313639;
+    font-size: 2rem;
+    @media (max-width: 450px) {
+      font-size: 1.7rem;
+    }
+  }
+}

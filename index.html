@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Simon</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="./css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      href="https://fonts.googleapis.com/css2?family=Jost&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,9 +16,42 @@
   </head>
 
   <body>
+    <div class="how-to">
+      <input type="checkbox" class="how-to__checkbox" id="how-to-toggle" />
+      <label for="how-to-toggle" class="how-to__button">
+        <span class="how-to__icon">&nbsp;</span>
+      </label>
+      <div class="how-to__background">&nbsp;</div>
+      <div class="how-to__nav">
+        <div class="how-to__text-container">
+          <h2 class="how-to__header">How to Play:</h2>
+          <p class="how-to__text">
+            The Simon Game is an electronic game of memory skill based on
+            remembering sequences.
+          </p>
+          <p class="how-to__text">
+            The game will light a random square pad, for example RED. Remember
+            which pad lighted up and press that square to move to the next
+            level.
+          </p>
+          <p class="how-to__text">
+            The game will light another random square pad, for example YELLOW.
+            Now you need to hit RED, YELLOW.
+          </p>
+          <p class="how-to__text">
+            The game lights up BLUE, now hit RED, YELLOW, BLUE.
+          </p>
+          <p class="how-to__text">
+            Only a pro can get beyond Level 10. Good luck!
+          </p>
+        </div>
+      </div>
+    </div>
+
     <h1 id="level-title">
       Press Any Key to
     </h1>
+
     <button id="start-button">Start</button>
     <div class="container">
       <div lass="row">
@@ -32,6 +65,8 @@
         <div type="button" id="blue" class="btn blue"></div>
       </div>
     </div>
+
+    <p class="footnote">Designed and built by Michael Tandy</p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>

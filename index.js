@@ -108,7 +108,7 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
 
-    $("h1").html("Game Over. Press Any Key to Restart.");
+    $("h1").html("Game Over. Press Any Key to");
 
     $("#start-button").text("Restart");
 

@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1 rem = 10px, because 10px/16px (which is the default) = 62.5%
+}
+
+body {
+  margin: 0;
+  font-family: Jost, sans-serif;
+  font-size: 4rem;
+}
